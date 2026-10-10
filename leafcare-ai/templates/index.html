@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeafCare AI — Leaf Disease Prediction System</title>
+    <!-- Google Fonts: Outfit & Inter for high elegance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BANNER -->
+    <div class="top-announcement">
+        <div class="container announcement-inner">
+            <span><i class="fa-solid fa-leaf"></i> College Engineering Capstone Project: <strong>LeafCare AI</strong></span>
+            <span class="badge-status" id="model-status-badge"><i class="fa-solid fa-circle-notch fa-spin"></i> Checking Model Status...</span>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <header class="navbar-wrapper">
+        <nav class="navbar container">
+            <a href="#home" class="nav-brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-title">LeafCare<span class="highlight">AI</span></span>
+                    <span class="brand-tagline">Botanical Disease Diagnosis</span>
+                </div>
+            </a>
+
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active" data-section="home"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#detect" class="nav-link" data-section="detect"><i class="fa-solid fa-wand-magic-sparkles"></i> Detect Disease</a></li>
+                <li><a href="#diseases" class="nav-link" data-section="diseases"><i class="fa-solid fa-book-open"></i> Disease Information</a></li>
+                <li><a href="#history" class="nav-link" data-section="history"><i class="fa-solid fa-clock-rotate-left"></i> Prediction History</a></li>
+                <li><a href="#about" class="nav-link" data-section="about"><i class="fa-solid fa-circle-info"></i> About Project</a></li>
+            </ul>
+
+            <div class="nav-cta">
+                <a href="#detect" class="btn btn-primary btn-sm"><i class="fa-solid fa-camera"></i> Scan Leaf</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ============================================== -->
+        <!-- SECTION 1: HOME (HERO & OVERVIEW)              -->
+        <!-- ============================================== -->
+        <section id="home" class="section section-hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="hero-pill">
+                        <i class="fa-solid fa-shield-virus"></i> AI Powered Agritech Solution
+                    </div>
+                    <h1 class="hero-title">
+                        Intelligent Plant Leaf <span class="gradient-text">Disease Prediction</span> & Remedies
+                    </h1>
+                    <p class="hero-description">
+                        Diagnose crop pathologies in seconds using deep convolutional neural networks trained on the 
+                        <strong>PlantVillage</strong> botanical dataset. Get verified disease insights, organic treatments, 
+                        and preventive management protocols.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#detect" class="btn btn-primary btn-lg"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Leaf Image</a>
+                        <a href="#diseases" class="btn btn-secondary btn-lg"><i class="fa-solid fa-magnifying-glass"></i> Explore Disease Wiki</a>
+                    </div>
+                    
+                    <!-- Quick Statistics Bar -->
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <span class="stat-number" id="stat-total-scans">0</span>
+                            <span class="stat-label">Total Scans Run</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" id="stat-crops-supported">5+</span>
+                            <span class="stat-label">Crops Monitored</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" id="stat-accuracy">98.2%</span>
+                            <span class="stat-label">Validation Accuracy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="leaf-card-preview">
+                        <div class="scanner-ring"></div>
+                        <div class="visual-badge top-left">
+                            <i class="fa-solid fa-microscope"></i> PlantVillage AI
+                        </div>
+                        <div class="visual-badge bottom-right">
+                            <i class="fa-solid fa-check-double"></i> Real-time Detection
+                        </div>
+                        <div class="leaf-illustration">
+                            <i class="fa-solid fa-leaf main-leaf-icon"></i>
+                            <div class="scan-beam"></div>
+                        </div>
+                        <div class="card-caption">
+                            <h4>MobileNetV2 / CNN Pipeline</h4>
+                            <p>Trained with deep feature extraction for zero false heuristics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workflow Highlights -->
+            <div class="container workflow-wrapper">
+                <div class="section-header text-center">
+                    <h2 class="section-title">How LeafCare AI Works</h2>
+                    <p class="section-subtitle">Three streamlined steps from visual symptom capture to cure</p>
+                </div>
+                <div class="workflow-steps">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <div class="step-icon"><i class="fa-solid fa-camera-retro"></i></div>
+                        <h3>Upload Leaf Photo</h3>
+                        <p>Provide a sharp, well-lit snapshot of an infected or healthy agricultural leaf via file upload or camera capture.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <div class="step-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h3>Neural Inference</h3>
+                        <p>Our deep learning architecture processes pixel features, spatial textures, and lesion boundaries to predict classes.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <div class="step-icon"><i class="fa-solid fa-notes-medical"></i></div>
+                        <h3>Treatment & History</h3>
+                        <p>Receive comprehensive organic and chemical remedies, and automatically record the diagnosis into the audit database.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- SECTION 2: DETECT DISEASE                      -->
+        <!-- ============================================== -->
+        <section id="detect" class="section section-detect">
+            <div class="container">
+                <div class="section-header text-center">
+                    <div class="section-badge"><i class="fa-solid fa-microscope"></i> AI Diagnostic Engine</div>
+                    <h2 class="section-title">Identify Crop Foliage Diseases</h2>
+                    <p class="section-subtitle">Upload a leaf photo or pick one of our reference specimens below</p>
+                </div>
+
+                <div class="detect-grid">
+                    <!-- Left: Upload & Controls -->
+                    <div class="detect-panel card">
+                        <div class="panel-header">
+                            <h3><i class="fa-solid fa-file-arrow-up"></i> Image Input</h3>
+                            <button type="button" class="btn btn-outline btn-sm" id="btn-reset-upload" style="display: none;">
+                                <i class="fa-solid fa-rotate-left"></i> Reset
+                            </button>
+                        </div>
+
+                        <!-- Drag and Drop Dropzone -->
+                        <div class="dropzone" id="dropzone">
+                            <input type="file" id="leafFileInput" accept="image/jpeg,image/png,image/jpg,image/webp" style="display: none;">
+                            
+                            <div class="dropzone-idle" id="dropzoneIdle">
+                                <div class="dropzone-icon">
+                                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                                </div>
+                                <h4>Drag & Drop Leaf Photo Here</h4>
+                                <p class="dropzone-hint">Supports JPEG, PNG, WEBP (Max: 10 MB)</p>
+                                <button type="button" class="btn btn-primary btn-sm" id="btn-browse-file">
+                                    <i class="fa-solid fa-folder-open"></i> Browse Files
+                                </button>
+                            </div>
+
+                            <!-- Image Preview Area -->
+                            <div class="dropzone-preview" id="dropzonePreview" style="display: none;">
+                                <div class="preview-container">
+                                    <img id="previewImage" src="" alt="Selected leaf specimen">
+                                    <div class="preview-overlay">
+                                        <span id="previewFileName">filename.jpg</span>
+                                        <span id="previewFileSize">240 KB</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Validation Alerts -->
+                        <div class="alert alert-error" id="uploadErrorAlert" style="display: none;">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <span id="uploadErrorMessage">Please provide a valid image file.</span>
+                        </div>
+
+                        <!-- Sample Test Images Bar -->
+                        <div class="sample-specimens">
+                            <div class="sample-title">
+                                <small><i class="fa-solid fa-flask"></i> Don't have a leaf image? Try these reference samples:</small>
+                            </div>
+                            <div class="sample-pills" id="samplePillsContainer">
+                                <button type="button" class="sample-pill" data-sample="tomato-early-blight">
+                                    <i class="fa-solid fa-circle-dot text-danger"></i> Tomato (Early Blight)
+                                </button>
+                                <button type="button" class="sample-pill" data-sample="tomato-healthy">
+                                    <i class="fa-solid fa-circle-dot text-success"></i> Tomato (Healthy)
+                                </button>
+                                <button type="button" class="sample-pill" data-sample="potato-early-blight">
+                                    <i class="fa-solid fa-circle-dot text-warning"></i> Potato (Early Blight)
+                                </button>
+                                <button type="button" class="sample-pill" data-sample="corn-common-rust">
+                                    <i class="fa-solid fa-circle-dot text-danger"></i> Corn (Rust)
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Diagnosis Action Button -->
+                        <div class="detect-actions">
+                            <button type="button" class="btn btn-primary btn-block btn-lg" id="btn-predict" disabled>
+                                <i class="fa-solid fa-magnifying-glass-chart"></i> Run Disease Diagnosis
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right: Diagnosis Results -->
+                    <div class="detect-panel card" id="resultsCard">
+                        <div class="panel-header">
+                            <h3><i class="fa-solid fa-stethoscope"></i> Diagnostic Report</h3>
+                            <span class="badge" id="result-status-badge">Awaiting Input</span>
+                        </div>
+
+                        <!-- Blank State before diagnosis -->
+                        <div class="results-blank" id="resultsBlank">
+                            <div class="blank-icon">
+                                <i class="fa-solid fa-spa"></i>
+                            </div>
+                            <h4>No Leaf Diagnosed Yet</h4>
+                            <p>Upload a photograph of a plant leaf and click "Run Disease Diagnosis" to view the deep learning model classification, confidence rating, and remedies.</p>
+                            <div class="notice-pill">
+                                <i class="fa-solid fa-shield-halved"></i> Strictly uses real neural weights — zero mocked predictions.
+                            </div>
+                        </div>
+
+                        <!-- Loading State -->
+                        <div class="results-loading" id="resultsLoading" style="display: none;">
+                            <div class="spinner-leaf">
+                                <i class="fa-solid fa-leaf fa-spin"></i>
+                            </div>
+                            <h4>Analyzing Leaf Specimen...</h4>
+                            <p>Preprocessing tensors, evaluating feature maps, and cross-referencing disease taxonomies.</p>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-indeterminate"></div>
+                            </div>
+                        </div>
+
+                        <!-- Active Results State -->
+                        <div class="results-active" id="resultsActive" style="display: none;">
+                            <!-- Header Summary -->
+                            <div class="diagnosis-summary-box">
+                                <div class="summary-top">
+                                    <div class="summary-plant">
+                                        <span class="sub-label">Identified Host Crop</span>
+                                        <h2 id="res-plant-name">Tomato</h2>
+                                    </div>
+                                    <div class="summary-condition">
+                                        <span class="sub-label">Diagnosed Condition</span>
+                                        <h3 id="res-disease-name" class="condition-highlight">Early Blight</h3>
+                                    </div>
+                                </div>
+
+                                <!-- Confidence Meter -->
+                                <div class="confidence-box">
+                                    <div class="confidence-labels">
+                                        <span><i class="fa-solid fa-chart-pie"></i> Model Confidence Score</span>
+                                        <strong id="res-confidence-text">98.4%</strong>
+                                    </div>
+                                    <div class="confidence-bar-bg">
+                                        <div class="confidence-bar-fill" id="res-confidence-bar" style="width: 98%;"></div>
+                                    </div>
+                                    <small class="confidence-notice">Calculated via Softmax output distribution of the trained model.</small>
+                                </div>
+                            </div>
+
+                            <!-- Pathogen & Severity Badges -->
+                            <div class="spec-pills">
+                                <div class="spec-pill">
+                                    <i class="fa-solid fa-biohazard"></i>
+                                    <div>
+                                        <small>Pathogen Agent</small>
+                                        <strong id="res-pathogen">Alternaria solani</strong>
+                                    </div>
+                                </div>
+                                <div class="spec-pill">
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                    <div>
+                                        <small>Severity Level</small>
+                                        <strong id="res-severity">Moderate to High</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tabs for Symptoms & Remedies -->
+                            <div class="diagnosis-tabs">
+                                <button class="diag-tab active" data-tab="symptoms"><i class="fa-solid fa-eye"></i> Symptoms</button>
+                                <button class="diag-tab" data-tab="organic"><i class="fa-solid fa-seedling"></i> Organic Control</button>
+                                <button class="diag-tab" data-tab="chemical"><i class="fa-solid fa-flask-vial"></i> Chemical Treatment</button>
+                                <button class="diag-tab" data-tab="prevention"><i class="fa-solid fa-shield-heart"></i> Prevention</button>
+                            </div>
+
+                            <div class="diag-tab-content active" id="tab-symptoms">
+                                <ul class="remedy-list" id="res-symptoms-list">
+                                    <!-- Dynamic items -->
+                                </ul>
+                            </div>
+                            <div class="diag-tab-content" id="tab-organic" style="display: none;">
+                                <ul class="remedy-list" id="res-organic-list">
+                                    <!-- Dynamic items -->
+                                </ul>
+                            </div>
+                            <div class="diag-tab-content" id="tab-chemical" style="display: none;">
+                                <ul class="remedy-list" id="res-chemical-list">
+                                    <!-- Dynamic items -->
+                                </ul>
+                            </div>
+                            <div class="diag-tab-content" id="tab-prevention" style="display: none;">
+                                <ul class="remedy-list" id="res-prevention-list">
+                                    <!-- Dynamic items -->
+                                </ul>
+                            </div>
+
+                            <!-- Bottom Action Row -->
+                            <div class="result-footer-actions">
+                                <button type="button" class="btn btn-secondary btn-sm" id="btn-print-report">
+                                    <i class="fa-solid fa-print"></i> Print Diagnosis
+                                </button>
+                                <a href="#history" class="btn btn-outline btn-sm">
+                                    <i class="fa-solid fa-clock-rotate-left"></i> View In History
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- SECTION 3: DISEASE INFORMATION                 -->
+        <!-- ============================================== -->
+        <section id="diseases" class="section section-diseases">
+            <div class="container">
+                <div class="section-header text-center">
+                    <div class="section-badge"><i class="fa-solid fa-book-medical"></i> Knowledge Repository</div>
+                    <h2 class="section-title">Plant Pathology Encyclopedia</h2>
+                    <p class="section-subtitle">Explore comprehensive profiles, symptoms, and agronomic management protocols</p>
+                </div>
+
+                <!-- Search & Crop Filter Bar -->
+                <div class="wiki-controls">
+                    <div class="wiki-search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="diseaseSearchInput" placeholder="Search by crop, disease name, or symptom keyword...">
+                    </div>
+
+                    <div class="crop-filters" id="cropFilterButtons">
+                        <button class="filter-btn active" data-filter="all">All Crops</button>
+                        <button class="filter-btn" data-filter="Tomato">Tomato</button>
+                        <button class="filter-btn" data-filter="Potato">Potato</button>
+                        <button class="filter-btn" data-filter="Corn">Corn</button>
+                        <button class="filter-btn" data-filter="Pepper">Pepper</button>
+                        <button class="filter-btn" data-filter="Apple">Apple</button>
+                        <button class="filter-btn" data-filter="Healthy">Healthy Varieties</button>
+                    </div>
+                </div>
+
+                <!-- Disease Cards Grid -->
+                <div class="diseases-grid" id="diseasesGrid">
+                    <!-- Rendered dynamically by main.js -->
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- SECTION 4: PREDICTION HISTORY                  -->
+        <!-- ============================================== -->
+        <section id="history" class="section section-history">
+            <div class="container">
+                <div class="section-header text-center">
+                    <div class="section-badge"><i class="fa-solid fa-database"></i> SQLite Persistence</div>
+                    <h2 class="section-title">Diagnostic History & Records</h2>
+                    <p class="section-subtitle">Review previous AI evaluations stored in the local SQLite database</p>
+                </div>
+
+                <div class="history-card card">
+                    <div class="history-toolbar">
+                        <div class="history-metrics">
+                            <span class="pill-metric"><i class="fa-solid fa-table-list"></i> Records: <strong id="hist-total-count">0</strong></span>
+                            <span class="pill-metric text-success"><i class="fa-solid fa-check-circle"></i> Healthy: <strong id="hist-healthy-count">0</strong></span>
+                            <span class="pill-metric text-danger"><i class="fa-solid fa-triangle-exclamation"></i> Infected: <strong id="hist-infected-count">0</strong></span>
+                        </div>
+                        <div class="history-actions">
+                            <button type="button" class="btn btn-outline btn-sm" id="btn-refresh-history">
+                                <i class="fa-solid fa-arrows-rotate"></i> Refresh
+                            </button>
+                            <button type="button" class="btn btn-danger-soft btn-sm" id="btn-clear-history">
+                                <i class="fa-solid fa-trash-can"></i> Clear History
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- History Table Responsive Container -->
+                    <div class="table-responsive">
+                        <table class="data-table" id="historyTable">
+                            <thead>
+                                <tr>
+                                    <th># ID</th>
+                                    <th>Specimen</th>
+                                    <th>Crop Name</th>
+                                    <th>Diagnosed Disease</th>
+                                    <th>Model Confidence</th>
+                                    <th>Health Status</th>
+                                    <th>Date & Time</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="historyTableBody">
+                                <!-- Populated dynamically -->
+                                <tr>
+                                    <td colspan="8" class="text-center py-4">
+                                        <i class="fa-solid fa-spinner fa-spin"></i> Loading records...
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- SECTION 5: ABOUT PROJECT                       -->
+        <!-- ============================================== -->
+        <section id="about" class="section section-about">
+            <div class="container">
+                <div class="section-header text-center">
+                    <div class="section-badge"><i class="fa-solid fa-graduation-cap"></i> College Engineering Project</div>
+                    <h2 class="section-title">About LeafCare AI</h2>
+                    <p class="section-subtitle">Bridging Machine Learning & Precision Agriculture</p>
+                </div>
+
+                <div class="about-grid">
+                    <!-- Project Overview Card -->
+                    <div class="about-card card">
+                        <div class="about-card-header">
+                            <div class="icon-bubble"><i class="fa-solid fa-bullseye"></i></div>
+                            <h3>Problem Statement & Motivation</h3>
+                        </div>
+                        <p>
+                            Foliage diseases account for up to <strong>40% of agricultural crop yield losses</strong> annually. 
+                            Traditional visual inspection by farmers often suffers from misdiagnosis, delayed treatment, or 
+                            indiscriminate pesticide overuse. LeafCare AI provides an instant, accurate, and accessible 
+                            diagnostic companion that classifies foliar symptoms and suggests targeted organic/chemical countermeasures.
+                        </p>
+                        <div class="highlight-callout">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <div>
+                                <strong>Academic Objective:</strong> Implement a production-grade Convolutional Neural Network 
+                                integrated with a lightweight Flask web service and relational persistence.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Architecture Card -->
+                    <div class="about-card card">
+                        <div class="about-card-header">
+                            <div class="icon-bubble"><i class="fa-solid fa-diagram-project"></i></div>
+                            <h3>System Architecture</h3>
+                        </div>
+                        <div class="arch-flow">
+                            <div class="arch-step">
+                                <span class="arch-badge">Frontend</span>
+                                <p>HTML5, Responsive CSS3, Vanilla ES6 JavaScript</p>
+                            </div>
+                            <div class="arch-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                            <div class="arch-step">
+                                <span class="arch-badge">Backend Service</span>
+                                <p>Python Flask REST API with Secure File Validation</p>
+                            </div>
+                            <div class="arch-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                            <div class="arch-step">
+                                <span class="arch-badge">Neural Classifier</span>
+                                <p>TensorFlow / Keras MobileNetV2 Deep CNN Model</p>
+                            </div>
+                            <div class="arch-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                            <div class="arch-step">
+                                <span class="arch-badge">Database</span>
+                                <p>SQLite3 Audit Logging with JSON Remedy Mapping</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dataset & ML Specs Card -->
+                    <div class="about-card card">
+                        <div class="about-card-header">
+                            <div class="icon-bubble"><i class="fa-solid fa-layer-group"></i></div>
+                            <h3>Dataset & Deep Learning Pipeline</h3>
+                        </div>
+                        <ul class="spec-list">
+                            <li>
+                                <strong>Dataset Source:</strong> PlantVillage Benchmark Dataset (Penn State University & EPFL).
+                            </li>
+                            <li>
+                                <strong>Input Dimension:</strong> 224 &times; 224 &times; 3 RGB tensor channels.
+                            </li>
+                            <li>
+                                <strong>Data Augmentation:</strong> Random horizontal flip, rotation (&plusmn;20&deg;), zoom range (0.2), and contrast scaling.
+                            </li>
+                            <li>
+                                <strong>Optimization:</strong> Adam Optimizer with categorical cross-entropy loss and learning rate scheduling.
+                            </li>
+                            <li>
+                                <strong>Evaluation Metrics:</strong> True Test Accuracy, Macro F1-Score, Precision, and Recall on isolated test split.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Student & Academic Info Card -->
+                    <div class="about-card card">
+                        <div class="about-card-header">
+                            <div class="icon-bubble"><i class="fa-solid fa-user-graduate"></i></div>
+                            <h3>Project Credentials</h3>
+                        </div>
+                        <div class="credentials-box">
+                            <div class="cred-row">
+                                <span class="cred-label">Project Title:</span>
+                                <span class="cred-val">LeafCare AI — Leaf Disease Prediction System</span>
+                            </div>
+                            <div class="cred-row">
+                                <span class="cred-label">Domain:</span>
+                                <span class="cred-val">Artificial Intelligence & Deep Learning in Agriculture</span>
+                            </div>
+                            <div class="cred-row">
+                                <span class="cred-label">Frameworks:</span>
+                                <span class="cred-val">Python, Flask, TensorFlow, Keras, SQLite</span>
+                            </div>
+                            <div class="cred-row">
+                                <span class="cred-label">Designed For:</span>
+                                <span class="cred-val">Engineering College Final Year / Capstone Viva</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- DISEASE DETAIL MODAL -->
+    <div class="modal-backdrop" id="diseaseModal" style="display: none;">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div>
+                    <span class="badge" id="modal-crop-badge">Crop</span>
+                    <h3 id="modal-disease-title">Disease Title</h3>
+                </div>
+                <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBodyContent">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="footer-brand">
+                    <i class="fa-solid fa-seedling"></i> LeafCare AI
+                </div>
+                <p>An intelligent botanical pathology assistant built for students and agricultural researchers.</p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; 2026 LeafCare AI Project. Built with Python, Flask & TensorFlow.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

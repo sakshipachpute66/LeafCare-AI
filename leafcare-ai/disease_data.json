@@ -1,0 +1,331 @@
+{
+  "Tomato___Early_blight": {
+    "plant": "Tomato",
+    "disease": "Early Blight",
+    "status": "Diseased",
+    "severity": "Moderate to High",
+    "pathogen": "Alternaria solani (Fungus)",
+    "description": "Early blight is a common fungal disease causing concentric dark rings ('target spots') on older leaves first, gradually progressing upwards.",
+    "symptoms": [
+      "Dark brown to black spots with concentric rings on lower leaves",
+      "Yellow halo surrounding the leaf lesions",
+      "Premature leaf drop exposing fruits to sunscald",
+      "Dark, sunken lesions on stems near the soil line"
+    ],
+    "causes": [
+      "Warm temperatures (24°C to 29°C) accompanied by wet weather or high humidity",
+      "Fungal spores surviving in diseased plant debris in soil",
+      "Overhead irrigation splashing fungal spores onto lower foliage"
+    ],
+    "organic_treatment": [
+      "Prune affected lower leaves immediately and dispose away from garden",
+      "Apply copper octanoate or copper sulfate liquid sprays",
+      "Spray bio-fungicides containing Bacillus subtilis",
+      "Apply thick organic mulch (straw or bark) to prevent soil splashing"
+    ],
+    "chemical_treatment": [
+      "Apply fungicides containing Chlorothalonil or Mancozeb every 7-10 days during wet periods",
+      "Alternate with azoxystrobin to prevent chemical resistance"
+    ],
+    "prevention": [
+      "Practice 3-year crop rotation with non-solanaceous crops",
+      "Use drip irrigation rather than overhead sprinklers to keep foliage dry",
+      "Stake and cage tomato plants to improve air circulation"
+    ]
+  },
+  "Tomato___Late_blight": {
+    "plant": "Tomato",
+    "disease": "Late Blight",
+    "status": "Diseased",
+    "severity": "Severe (Destructive)",
+    "pathogen": "Phytophthora infestans (Oomycete)",
+    "description": "A devastating water mold that caused the Irish Potato Famine. Spreads rapidly in cool, moist weather, destroying foliage and fruit in days.",
+    "symptoms": [
+      "Water-soaked irregular pale-green or brown lesions on leaves",
+      "White fuzzy mold growth on the undersides of leaves in humid conditions",
+      "Rapid browning and collapse of entire leaf branches",
+      "Large firm brown lesions on tomato fruits"
+    ],
+    "causes": [
+      "Cool, rainy, or foggy weather (15°C to 20°C with 90%+ relative humidity)",
+      "Windborne spores traveling long distances across fields",
+      "Infected volunteer tomato or potato seedlings"
+    ],
+    "organic_treatment": [
+      "Remove and bag infected plants immediately; do NOT compost infected material",
+      "Preventive sprays of fixed copper fungicide prior to wet weather",
+      "Keep plants under transparent protective rain covers in high-risk zones"
+    ],
+    "chemical_treatment": [
+      "Preventive systemic fungicides such as metalaxyl, cymoxanil, or dimethomorph",
+      "Contact protectants like chlorothalonil applied ahead of rainy weather"
+    ],
+    "prevention": [
+      "Plant certified disease-resistant tomato varieties (e.g., Defiant, Mountain Magic)",
+      "Ensure wide plant spacing for rapid leaf drying after rain",
+      "Eradicate nearby wild solanaceous weeds"
+    ]
+  },
+  "Tomato___healthy": {
+    "plant": "Tomato",
+    "disease": "Healthy Plant",
+    "status": "Healthy",
+    "severity": "None",
+    "pathogen": "None (No Disease Detected)",
+    "description": "The leaf exhibits vibrant green chlorophyll, intact venation, and zero signs of pathogen infestation or nutritional deficiency.",
+    "symptoms": [
+      "Uniform green foliage without discoloration or necrosis",
+      "Firm, well-hydrated leaf turgor",
+      "No spotting, wilting, curling, or mildew"
+    ],
+    "causes": [
+      "Balanced soil nutrients (N-P-K and trace minerals)",
+      "Adequate sunlight and proper moisture management"
+    ],
+    "organic_treatment": [
+      "Continue standard organic fertilization (compost tea, vermicompost)",
+      "Maintain 2-3 inches of clean organic mulch around base"
+    ],
+    "chemical_treatment": [
+      "No chemical fungicides or bactericides required"
+    ],
+    "prevention": [
+      "Maintain regular drip irrigation schedule",
+      "Scout leaves weekly for early signs of pests or spotting",
+      "Ensure 6-8 hours of direct daily sunlight"
+    ]
+  },
+  "Potato___Early_blight": {
+    "plant": "Potato",
+    "disease": "Early Blight",
+    "status": "Diseased",
+    "severity": "Moderate",
+    "pathogen": "Alternaria solani (Fungus)",
+    "description": "Fungal infection creating brown target-shaped spots with concentric rings on potato foliage, impairing tuber yield.",
+    "symptoms": [
+      "Dark brown circular to angular spots with concentric concentric rings",
+      "Yellowing chlorosis around the lesions",
+      "Lower leaves drop prematurely, weakening tuber development"
+    ],
+    "causes": [
+      "Stressed plants due to nitrogen deficiency or moisture fluctuations",
+      "Warm days with high humidity and wet nights"
+    ],
+    "organic_treatment": [
+      "Apply neem oil extracts or copper-based fungicides",
+      "Mulch soil to reduce spore splash"
+    ],
+    "chemical_treatment": [
+      "Spray mancozeb, chlorothalonil, or pyraclostrobin upon first detection"
+    ],
+    "prevention": [
+      "Maintain optimal nitrogen fertility to preserve vine vitality",
+      "Rotate with non-solanaceous crops such as legumes or corn"
+    ]
+  },
+  "Potato___Late_blight": {
+    "plant": "Potato",
+    "disease": "Late Blight",
+    "status": "Diseased",
+    "severity": "Severe",
+    "pathogen": "Phytophthora infestans (Oomycete)",
+    "description": "Aggressive disease that damages foliage and causes foul-smelling dry rot inside developing potato tubers.",
+    "symptoms": [
+      "Dark water-soaked spots that turn purplish-brown",
+      "White fungal-like fuzz on lower leaf surface in morning dew",
+      "Stems show greasy brown lesions; foliage wilts rapidly"
+    ],
+    "causes": [
+      "Prolonged leaf wetness and cool ambient temperatures (12°C - 22°C)"
+    ],
+    "organic_treatment": [
+      "Immediately cull and safely destroy all infected foliage",
+      "Apply protective copper hydroxide sprays"
+    ],
+    "chemical_treatment": [
+      "Systemic fungicides like cymoxanil, propamocarb, or fluopicolide"
+    ],
+    "prevention": [
+      "Plant only certified disease-free seed tubers",
+      "Hill up soil well around potato bases to protect tubers from surface spores"
+    ]
+  },
+  "Potato___healthy": {
+    "plant": "Potato",
+    "disease": "Healthy Plant",
+    "status": "Healthy",
+    "severity": "None",
+    "pathogen": "None",
+    "description": "Potato foliage is crisp, healthy, and synthesizing carbohydrates actively for underground tuber bulking.",
+    "symptoms": [
+      "Rich green leaf color with smooth leaf margins",
+      "Stems are sturdy and erect with no rotting or lesions"
+    ],
+    "causes": [
+      "Adequate soil moisture and well-drained fertile soil"
+    ],
+    "organic_treatment": [
+      "Provide light potassium-rich compost to support tuber bulking"
+    ],
+    "chemical_treatment": [
+      "None needed"
+    ],
+    "prevention": [
+      "Keep soil evenly moist without waterlogging",
+      "Perform periodic hilling up of soil around root zone"
+    ]
+  },
+  "Corn_(maize)___Common_rust": {
+    "plant": "Corn (Maize)",
+    "disease": "Common Rust",
+    "status": "Diseased",
+    "severity": "Moderate",
+    "pathogen": "Puccinia sorghi (Fungus)",
+    "description": "Fungal rust creating reddish-brown pustules across corn leaf blades, inhibiting photosynthesis in grain crops.",
+    "symptoms": [
+      "Oval to elongate cinnamon-brown powdery pustules on both leaf surfaces",
+      "Pustules rupture epidermal tissue releasing reddish spores",
+      "Severe infections lead to leaf chlorosis and premature senescence"
+    ],
+    "causes": [
+      "Wind-blown spores from southern climates, cool temperatures (16°C - 25°C), and high humidity"
+    ],
+    "organic_treatment": [
+      "Apply sulfur dust or bio-fungicide sprays early in season",
+      "Remove lower infected corn leaf remnants"
+    ],
+    "chemical_treatment": [
+      "Apply triazole or strobilurin fungicides if rust emerges before tasseling"
+    ],
+    "prevention": [
+      "Plant rust-resistant corn hybrid seeds",
+      "Early planting to avoid peak seasonal spore migration"
+    ]
+  },
+  "Corn_(maize)___healthy": {
+    "plant": "Corn (Maize)",
+    "disease": "Healthy Plant",
+    "status": "Healthy",
+    "severity": "None",
+    "pathogen": "None",
+    "description": "The maize blade shows robust venation, deep green color, and high photosynthetic vigour.",
+    "symptoms": [
+      "Smooth, broad, bright green leaf surfaces",
+      "No pustules, stripes, or necrotic edges"
+    ],
+    "causes": [
+      "Optimal nitrogen uptake and warm sunny climate"
+    ],
+    "organic_treatment": [
+      "Balanced side-dressing with organic matter"
+    ],
+    "chemical_treatment": [
+      "None needed"
+    ],
+    "prevention": [
+      "Ensure sufficient soil nitrogen and well-spaced rows"
+    ]
+  },
+  "Pepper__bell___Bacterial_spot": {
+    "plant": "Pepper (Bell)",
+    "disease": "Bacterial Spot",
+    "status": "Diseased",
+    "severity": "Moderate to High",
+    "pathogen": "Xanthomonas campestris pv. vesicatoria (Bacteria)",
+    "description": "Bacterial infection causing necrotic spots on leaves and fruit, causing severe defoliation in pepper crops.",
+    "symptoms": [
+      "Small, yellowish-green lesions turning water-soaked and dark brown",
+      "Lesions with slightly raised margins or dead centers that drop out",
+      "Extensive leaf shedding leaving pepper fruit susceptible to sunscald"
+    ],
+    "causes": [
+      "Warm rainy weather, overhead watering, and contaminated seeds"
+    ],
+    "organic_treatment": [
+      "Apply fixed copper mixed with organic bactericides",
+      "Sanitize pruning tools between plants"
+    ],
+    "chemical_treatment": [
+      "Copper hydroxide paired with mancozeb for improved bacterial suppression"
+    ],
+    "prevention": [
+      "Use hot-water treated or certified disease-free seeds",
+      "Avoid handling pepper plants when leaves are wet"
+    ]
+  },
+  "Pepper__bell___healthy": {
+    "plant": "Pepper (Bell)",
+    "disease": "Healthy Plant",
+    "status": "Healthy",
+    "severity": "None",
+    "pathogen": "None",
+    "description": "Vibrant bell pepper leaf with smooth cuticle, bright green hue, and no microbial lesions.",
+    "symptoms": [
+      "Glossy green leaves with uniform surface",
+      "Normal flowering and healthy shoot tips"
+    ],
+    "causes": [
+      "Well-aerated soil and balanced watering"
+    ],
+    "organic_treatment": [
+      "Apply organic fish emulsion or seaweed extract"
+    ],
+    "chemical_treatment": [
+      "None needed"
+    ],
+    "prevention": [
+      "Mulch soil bed and water at the root zone"
+    ]
+  },
+  "Apple___Apple_scab": {
+    "plant": "Apple",
+    "disease": "Apple Scab",
+    "status": "Diseased",
+    "severity": "Moderate",
+    "pathogen": "Venturia inaequalis (Fungus)",
+    "description": "Prevalent fungal disease causing olive-green to black velvety spots on apple leaves and scabby lesions on apples.",
+    "symptoms": [
+      "Olive-green velvety spots on leaf tops that turn dark brown/black",
+      "Leaves become distorted, puckered, and drop prematurely",
+      "Corky scab lesions on developing fruits"
+    ],
+    "causes": [
+      "Wet spring weather with continuous moisture on leaves for 6+ hours"
+    ],
+    "organic_treatment": [
+      "Spray sulfur or copper soap spray prior to blossom opening",
+      "Rake and compost fallen leaves thoroughly in autumn"
+    ],
+    "chemical_treatment": [
+      "Myclobutanil, captan, or mancozeb applied during bud break and bloom"
+    ],
+    "prevention": [
+      "Plant scab-resistant cultivars (e.g., Liberty, Prima, Freedom)",
+      "Prune canopy regularly to increase sunlight penetration and aeration"
+    ]
+  },
+  "Apple___healthy": {
+    "plant": "Apple",
+    "disease": "Healthy Plant",
+    "status": "Healthy",
+    "severity": "None",
+    "pathogen": "None",
+    "description": "Healthy apple leaf with strong chlorophyll synthesis, clear venation, and intact margins.",
+    "symptoms": [
+      "Deep green, serrated leaf margins without blemishes",
+      "Strong petiole attachment to branches"
+    ],
+    "causes": [
+      "Good soil aeration, winter pruning, and proper pest management"
+    ],
+    "organic_treatment": [
+      "Standard balanced organic orchard management"
+    ],
+    "chemical_treatment": [
+      "None needed"
+    ],
+    "prevention": [
+      "Maintain clean orchard floor and monitor seasonal weather"
+    ]
+  }
+}
